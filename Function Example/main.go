@@ -5,6 +5,7 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
+	"log"
 	"os"
 	"strconv"
 	"strings"
@@ -16,20 +17,19 @@ func main() {
 
 	input, err := reader.ReadString('\n') // Take strings
 	if err != nil {                       // Check statement
-		os.Exit(-1)
+		log.Fatal(err)
 	}
 
 	input = strings.TrimSpace(input) // Remove blanks
 
 	inputInteger, err := strconv.Atoi(input) // Convert integer
 	if err != nil {                          // Check statement
-		os.Exit(-1)
+		log.Fatal(err)
 	}
 
 	result, err := controlAge(int64(inputInteger)) // Call function
 	if err != nil {                                // Check statement
-		fmt.Println(err)
-		os.Exit(-1) // exit program with -1
+		log.Fatal(err)
 	}
 
 	fmt.Printf("Age Control: %t", result) // Print result
