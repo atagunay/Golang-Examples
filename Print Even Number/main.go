@@ -22,6 +22,7 @@ func main() {
 	for i := 0; i < inputNumeric; i++ { // for loop
 		if i%2 == 0 { // control even or odd
 			fmt.Println(i) // if i is even, print
+
 		}
 	}
 
